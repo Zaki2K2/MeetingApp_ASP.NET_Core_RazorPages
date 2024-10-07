@@ -1,0 +1,105 @@
+﻿@page
+@model MeetingApp.Pages.Meet.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+}
+
+<h1>Index</h1>
+
+<button class="btn btn-primary">
+    <a asp-page="Create" style="color:white" type="button">Book Now</a>
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].TimeStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].TimeEnd)
+            </th>
+           @*  <th>
+                @Html.DisplayNameFor(model => model.Information[0].Confirmation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].ContactNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Deleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Feedback)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].Attachment)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Information[0].EntryRecord)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Information) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeEnd)
+            </td>
+           @*  <td>
+                @Html.DisplayFor(modelItem => item.Confirmation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feedback)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Attachment)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.EntryRecord)
+            </td>
+                <td style="margin-right: 5px;">
+                    <a asp-page="./Edit" asp-route-id="@item.Info_id" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a asp-page="./Details" asp-route-id="@item.Info_id" title="Details">
+                        <i class="fas fa-info-circle"></i>
+                    </a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Info_id" title="Delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </a>
+                </td>
+
+        </tr>
+}
+    </tbody>
+</table>

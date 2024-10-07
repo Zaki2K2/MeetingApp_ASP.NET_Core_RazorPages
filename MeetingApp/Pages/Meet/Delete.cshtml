@@ -1,0 +1,88 @@
+﻿@page
+@model MeetingApp.Pages.Meet.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Information</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.TimeStart)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.TimeStart)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.TimeEnd)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.TimeEnd)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Confirmation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Confirmation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.ContactNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.ContactNo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Deleted)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Deleted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Feedback)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Feedback)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.Attachment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.Attachment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Information.EntryRecord)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Information.EntryRecord)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Information.Info_id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

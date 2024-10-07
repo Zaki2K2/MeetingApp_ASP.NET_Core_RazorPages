@@ -1,0 +1,90 @@
+﻿@page
+@model MeetingApp.Pages.Meet.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Information</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Information.Info_id" />
+            <div class="form-group">
+                <label asp-for="Information.Title" class="control-label"></label>
+                <input asp-for="Information.Title" class="form-control" />
+                <span asp-validation-for="Information.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information.Date" class="control-label"></label>
+                <input asp-for="Information.Date" class="form-control" type="date" />
+                <span asp-validation-for="Information.Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Information.TimeStart" class="control-label"></label>
+                <input asp-for="Information.TimeStart" class="form-control" type="time" />
+                <span asp-validation-for="Information.TimeStart" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Information.TimeEnd" class="control-label"></label>
+                <input asp-for="Information.TimeEnd" class="form-control" type="time" />
+                <span asp-validation-for="Information.TimeEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Information.Confirmation" /> @Html.DisplayNameFor(model => model.Information.Confirmation)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information.ContactNo" class="control-label"></label>
+                <input asp-for="Information.ContactNo" class="form-control" />
+                <span asp-validation-for="Information.ContactNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information.Email" class="control-label"></label>
+                <input asp-for="Information.Email" class="form-control" />
+                <span asp-validation-for="Information.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Information.Deleted" /> @Html.DisplayNameFor(model => model.Information.Deleted)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Information.Feedback" class="control-label"></label>
+                <textarea asp-for="Information.Feedback" class="form-control" rows="5" placeholder="Enter your feedback or attach notes here..."></textarea>
+                <span asp-validation-for="Information.Feedback" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="attachment" class="control-label">Attachments</label>
+                <input type="file" class="form-control" id="attachment" name="attachment" multiple />
+                <span asp-validation-for="Information.Attachment" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Information.EntryRecord" class="control-label"></label>
+                <input asp-for="Information.EntryRecord" class="form-control" />
+                <span asp-validation-for="Information.EntryRecord" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
